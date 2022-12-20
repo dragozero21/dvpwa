@@ -1,0 +1,13 @@
+name: ZAP-Test
+
+on:
+  push: 
+    branches: [ master ]
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Image
+        run: docker-compose build && docker-compose up
